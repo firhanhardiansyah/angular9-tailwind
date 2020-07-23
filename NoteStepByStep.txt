@@ -1,0 +1,29 @@
+1. create new project using Angular CLI
+2. add TailwindCSS and all additional packages
+   - npm i tailwindcss postcss-import postcss-loader postcss-scss @angular-builders/custom-webpack - D
+   - npx tailwind init
+   - create
+     - webpack.config.js
+     - npx tailwind init
+   - config
+     - styles.scss
+     - angular.json
+3. Start the app
+   ng serve
+4. Clean up the code
+5. Set the proxy
+   create src/ 
+    proxy.conf.json
+6. Build login component UI
+   ng generate component login
+
+   Untuk Routing (app-routing.module.ts)
+
+    import { LoginComponent } from './login/login.component';
+
+    const routes: Routes = [
+      {
+        path: '',
+        component: LoginComponent
+      }
+    ];
