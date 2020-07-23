@@ -15,8 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "outputPath": "dist/banking-app-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -64,8 +67,12 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
+            "proxyConfig": "src/proxy.conf.json",
             "browserTarget": "banking-app-frontend:build"
           },
           "configurations": {
@@ -123,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "banking-app-frontend"
+    }
+  },
+  "defaultProject": "banking-app-frontend",
+  "cli": {
+    "analytics": "5f80c2fd-8e09-4a78-a387-4f32446aed99"
+  }
 }
